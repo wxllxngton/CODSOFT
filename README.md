@@ -15,6 +15,9 @@ and organize their tasks efficiently. This project aims to create a<br>
 **command-line** or **GUI-based** application using Python, allowing<br>
 users to `create`, `update`, and `track` their to-do lists
 
+![to-do-list](https://github.com/wxllxngton/CODSOFT/assets/79745456/e1d0c5c8-7cfd-46bf-a444-ca86d071e04d)
+
+
 ### TASK 2 - CALCULATOR
 
 Design a simple calculator with basic arithmetic operations.
