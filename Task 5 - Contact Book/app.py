@@ -6,7 +6,7 @@ from manipulate_csv import CSVThings
 import copy
 
 class ContactBookApp:
-    def __init__(self, file_path=r'CODSOFT\Task 5 - Contact Book\csv\contacts.csv'):
+    def __init__(self, file_path=r'./csv/contacts.csv'):
         """
         Initialize the ContactBookApp.
 
@@ -16,7 +16,7 @@ class ContactBookApp:
         Returns:
         - None
         """
-        self.root = ttk.Window(themename='darkly', title='PyContact Book', iconphoto=r'CODSOFT\Task 5 - Contact Book\assets\phone-book.png')
+        self.root = ttk.Window(themename='darkly', title='PyContact Book', iconphoto=r'./assets/phone-book.png')
         self.csv_obj = CSVThings(file_path)
         self.holding_bay = [] # Holds records to be manipulated temporarily
 
@@ -43,7 +43,7 @@ class ContactBookApp:
 
         self.create_button_widgets()
 
-        self.in_focus = ttk.Label(self.root, text=f"Record(s) Selected: None", bootstyle="info")
+        self.in_focus = ttk.Label(self.root, text=f"Contact(s) Selected: None", bootstyle="info")
         self.in_focus.grid(row=3, column=0, columnspan=8, rowspan=4)
 
 
@@ -63,9 +63,9 @@ class ContactBookApp:
             self.holding_bay = [list(self.dt.view.item(iid, 'values')) for iid in self.dt.view.selection()]
             print(f"In focus: {self.holding_bay}")
             if len(self.holding_bay) < 3:
-                self.in_focus.config(text=f"Record(s) Selected: {self.holding_bay}")
+                self.in_focus.config(text=f"Contact(s) Selected: {self.holding_bay}")
             else:
-                self.in_focus.config(text=f"Record(s) Selected: {self.holding_bay[0]}, {self.holding_bay[1]}...")
+                self.in_focus.config(text=f"Contact(s) Selected: {self.holding_bay[0]}, {self.holding_bay[1]}...")
 
 
         except Exception:
@@ -160,6 +160,7 @@ class ContactBookApp:
         for index in range(len(values)):
             if values[index]:
                 tmp[0][index] = values[index]
+
         self.csv_obj.update_record_in_csv(self.holding_bay[0], tmp[0])
         self.create_messagebox_widget(message="Contact updated successfully.")
 
@@ -172,7 +173,7 @@ class ContactBookApp:
         Returns:
         - None
         """
-        updated_csv_obj = CSVThings(r'CODSOFT\Task 5 - Contact Book\csv\contacts.csv')
+        updated_csv_obj = CSVThings(r'./csv/contacts.csv')
         self.dt.build_table_data(coldata=updated_csv_obj.header, rowdata=updated_csv_obj.data)
 
 if __name__ == "__main__":

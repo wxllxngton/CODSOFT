@@ -107,6 +107,8 @@ def calculator(first_number, last_number, operator):
 
 
 while power_status:
+    continue_msg = None
+
     try:
         f_number = float(input("What is the first number? "))
         print("+\n-\n*\n/")
@@ -117,17 +119,18 @@ while power_status:
         )
         print(f"{f_number} {operation} {l_number} = {result_carried}")
 
-        continue_msg = input(
-            f"Type 'y' if you want to continue with {result_carried}, or type 'n' to start a new calculation "
-        )
+        while True:
+            continue_msg = input(
+                f"Type 'y' to continue with {result_carried}, 'n' to start a new calculation, or 'q' to quit: "
+            )
 
-        if continue_msg == "n":
-            continue
-        elif continue_msg == "q":
-            power_status = False
+            if continue_msg == "n":
+                break
+            elif continue_msg == "q":
+                power_status = False
+                break
 
-        while continue_msg == "y":
-            f_number = next_calculation["result"]
+            f_number = next_calculation.get("result", 0)
             print("+\n-\n*\n/")
             operation = input("Pick an operation: ")
             l_number = float(input("What is the next number? "))
@@ -135,10 +138,6 @@ while power_status:
                 first_number=f_number, last_number=l_number, operator=operation
             )
             print(f"{f_number} {operation} {l_number} = {result_carried}")
-
-            continue_msg = input(
-                f"Type 'y' if you want to continue with {result_carried}, or type 'n' to start a new calculation "
-            )
 
     except ValueError:
         print("Input a number!")

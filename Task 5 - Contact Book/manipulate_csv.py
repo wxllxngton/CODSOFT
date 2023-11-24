@@ -30,6 +30,7 @@ class CSVThings:
         with open(self.file_path, 'a', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)
             csv_writer.writerow(record)
+        self.data.append(record)  # Update self.data
 
     def overwrite_csv(self, data):
         """
@@ -45,6 +46,7 @@ class CSVThings:
             csv_writer = csv.writer(csvfile)
             csv_writer.writerow(self.header)
             csv_writer.writerows(data)
+        self.data = data  # Update self.data
 
     def delete_record_from_csv(self, records):
         """
@@ -59,7 +61,6 @@ class CSVThings:
         updated_data = [row for row in self.data if row not in records]
         self.overwrite_csv(updated_data)
 
-
     def update_record_in_csv(self, original_record, record):
         """
         Updates a record in the CSV file.
@@ -73,3 +74,4 @@ class CSVThings:
         """
         updated_data = [record if row == original_record else row for row in self.data]
         self.overwrite_csv(updated_data)
+        self.data = updated_data  # Update self.data
