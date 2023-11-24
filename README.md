@@ -2,6 +2,12 @@
 
 ## CODSOFT Internship Tasks
 
+Start the virtual environment by activating with the command:
+
+```bash
+venv/Scripts/activate
+```
+
 ### TASK 1 - TO-DO LIST
 
 A To-Do List application is a useful project that helps users manage<br>
@@ -18,7 +24,6 @@ Design a simple calculator with basic arithmetic operations.
 
 ![calc](https://github.com/wxllxngton/CODSOFT/assets/79745456/a9199d98-9dd5-46bf-b80f-192d536200dd)
 
-
 ### TASK 3 - PASSWORD GENERATOR
 
 <par>
@@ -31,7 +36,6 @@ This project aims to create a password generator application using Python, allow
 -   **Display the Password:** Print the generated password on the screen.
 
 ![password](https://github.com/wxllxngton/CODSOFT/assets/79745456/043e4f1e-1fe9-4d17-af0e-461bb14000e1)
-
 
 ### TASK 4 - Rock-Paper-Scissors Game
 
@@ -68,5 +72,3 @@ This project aims to create a password generator application using Python, allow
 -   **User Interface:** Design a user-friendly interface for easy interaction.
 
 ![2023-11-17 03_34_11-app py - CODSOFT - Visual Studio Code](https://github.com/wxllxngton/CODSOFT/assets/79745456/557588f2-9e77-42be-a150-ae2be7718925)
-
-
