@@ -59,6 +59,8 @@ This project aims to create a password generator application using Python, allow
 -   **Play Again:** Ask the user if they want to play another round.
 
 -   **User Interface:** Design a user-friendly interface with clear instructions and feedback.
+  
+![2023-11-26 23_22_42-](https://github.com/wxllxngton/CODSOFT/assets/79745456/c26e0110-ff3b-4539-af38-bd6f448eb189)
 
 ### TASK 5 - Contact Book
 
